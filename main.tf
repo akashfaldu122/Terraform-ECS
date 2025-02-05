@@ -7,6 +7,18 @@ terraform {
   }
 }
 
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "akashfaldu"
+
+    workspaces {
+      name = "default"
+    }
+  }
+}
+
+
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
